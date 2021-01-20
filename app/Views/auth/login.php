@@ -3,9 +3,9 @@
 <?= $this->section('content'); ?>
 <div class="container">
    <div class="row mt-5">
-      <div class="col-6 offset-md-3 shadow-sm">
+      <div class="col-6 offset-md-3 shadow-sm mt-5">
          <h3 class="text-center">Halaman Login</h3>
-         <div class="row">
+         <div class="row mt-5">
             <div class="col-md-12">
                <?php 
                $session = session();

@@ -49,6 +49,7 @@ class Auth extends BaseController
             }
          } else {
             $this->session->setFlashdata('errors', ['Username/Password Salah!']);
+            return redirect()->to('/auth');
          }
       }
 
