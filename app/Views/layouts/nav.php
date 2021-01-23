@@ -5,11 +5,15 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <?php if(session()->get('isLoggedIn')) : ?>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="/">Home</a>
       </li>
       <?php if(session()->get('role') == 0) : ?>
+      <li class="nav-item active">
+        <a class="nav-link" href="/transaksi">Transaksi</a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Barang</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -23,6 +27,7 @@
         <a class="nav-link" href="/etalase">Etalase</a>
       </li>
     </ul>
+    <?php endif; ?>
     <div class="form-inline my-2 my-lg-0">
       <ul class="navbar-nav mr-auto">
         <?php if(!session()->has('isLoggedIn')) : ?>
