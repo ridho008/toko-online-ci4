@@ -30,9 +30,16 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+// Admin
 $routes->get('/', 'Home::index');
 $routes->get('/barang/create', 'Barang::create');
 $routes->get('/barang/edit/(:num)', 'Barang::edit/$1');
+
+// User
+// Etalase
+$routes->get('/etalase', 'Etalase::index');
+
+
 
 /**
  * --------------------------------------------------------------------

@@ -41,11 +41,12 @@ class Auth extends BaseController
                $sessData = [
                   'username' => $user->username,
                   'id' => $user->id,
+                  'role' => $user->role,
                   'isLoggedIn' => TRUE,
                ];
 
                $this->session->set($sessData);
-               return redirect()->to('/home');
+               return redirect()->to('/');
             }
          } else {
             $this->session->setFlashdata('errors', ['Username/Password Salah!']);

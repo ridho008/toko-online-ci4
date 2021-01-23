@@ -14,6 +14,7 @@
                            <thead>
                               <tr>
                                  <th>No</th>
+                                 <th>Gambar</th>
                                  <th>Barang</th>
                                  <th>Harga</th>
                                  <th>Stok</th>
@@ -24,6 +25,9 @@
                               <?php foreach($barangs as $index => $barang) : ?>
                               <tr>
                                  <td><?= ($index + 1) ?></td>
+                                 <td>
+                                    <img src="/uploads/<?= $barang->gambar ?>" width="100">
+                                 </td>
                                  <td><?= $barang->nama ?></td>
                                  <td><?= number_format($barang->harga,0,',','.') ?></td>
                                  <td><?= $barang->stok ?></td>
