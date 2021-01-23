@@ -3,7 +3,6 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-<?= uri_string(); ?>
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <?php if(session()->get('isLoggedIn')) : ?>
     <ul class="navbar-nav mr-auto">
@@ -21,6 +20,9 @@
           <a class="dropdown-item<?= (uri_string() == 'barang/create') ? ' active' : '' ?>" href="/barang/create">Tambah Barang</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
+      </li>
+      <li class="nav-item<?= (uri_string() == 'user') ? ' active' : '' ?>">
+        <a class="nav-link" href="/user">User</a>
       </li>
       <?php endif; ?>
       <li class="nav-item<?= (uri_string() == 'etalase') ? ' active' : '' ?>">

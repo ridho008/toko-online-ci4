@@ -9,6 +9,7 @@ class Transaksi extends BaseController
       helper('form');
       $this->validation = \Config\Services::validation();
       $this->session = session();
+      $this->email = \Config\Services::email();
    }
 
 	public function view()
@@ -69,6 +70,23 @@ class Transaksi extends BaseController
       $this->response->setContentType('application/pdf');
       //Close and output PDF document
       $pdf->Output('invoice.pdf', 'I');
+   }
+
+   public function sendEmail()
+   {
+      $this->email->setFrom('ridhosurya000@gmail.com', 'Ridho Surya');
+      $this->email->setTo('ridhosurya000@gmail.com');
+
+      $this->email->setSubject('Email Test');
+      $this->email->setMessage('Testing the email class.');
+      // $this->email->newline("\r\n");
+
+      if(!$this->email->send()) {
+         echo "gagal";
+         echo $this->email->printDebugger();
+      } else {
+         echo "berhasil";
+      }
    }
 
 	//--------------------------------------------------------------------
