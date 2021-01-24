@@ -155,4 +155,16 @@ class Validation
 			'rules' => 'required'
 		]
 	];
+
+	public $komentar = [
+		'komentar' => [
+			'rules' => 'required'
+		]
+	];
+
+	public $komentar_errors = [
+		'komentar' => [
+			'required' => '{field} Harus Di Isi.'
+		]
+	];
 }

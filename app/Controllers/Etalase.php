@@ -28,7 +28,9 @@ class Etalase extends BaseController
       // mengambil id
       $id = $this->request->uri->getSegment(3);
       $barangModel = new \App\Models\BarangModel();
+      $komentarModel = new \App\Models\KomentarModel();
       $barang = $barangModel->find($id);
+      $komentar = $komentarModel->where('id_barang', $id)->findAll();
 
       $province = $this->rajaongkir('province');
 
@@ -72,6 +74,7 @@ class Etalase extends BaseController
       return view('etalase/beli', [
          'title' => $barang->nama,
          'barang' => $barang,
+         'komentar' => $komentar,
          'provinsi' => json_decode($province)->rajaongkir->results
       ]);
    }

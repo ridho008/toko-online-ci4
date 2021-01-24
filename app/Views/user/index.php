@@ -16,9 +16,9 @@
                   </tr>
                </thead>
                <tbody>
-                  <?php foreach($model as $value => $u) : ?>
+                  <?php $no = 1 + (5 * ($currentPage - 1)); foreach($model as $value => $u) : ?>
                   <tr>
-                     <td><?= $u->id ?></td>
+                     <td><?= $no++; ?></td>
                      <td><?= $u->username ?></td>
                      <td><?= $u->created_by ?></td>
                      <td><?= $u->created_date ?></td>
@@ -28,10 +28,10 @@
                </tbody>
             </table>
          </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <?= $pager->links('default', 'custom_pagination'); ?>
+         <div class="row">
+            <div class="col-md float-right">
+               <?= $pager->links('user', 'custom_pagination'); ?>
+            </div>
          </div>
       </div>
    </div>
